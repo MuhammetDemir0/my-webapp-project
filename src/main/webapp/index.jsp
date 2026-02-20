@@ -23,11 +23,22 @@
             backdrop-filter: blur(10px);
             color: white;
             box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         h1 {
             margin: 0;
             font-size: 40px;
+            transition: color 200ms ease, transform 200ms ease, font-size 200ms ease;
+        }
+        h1:hover {
+            color: red;
+            font-size: 48px;
+            transform: translateY(-3px);
+            cursor: default;
         }
     </style>
 </head>
