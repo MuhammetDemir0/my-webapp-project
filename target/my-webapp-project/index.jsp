@@ -1,39 +1,24 @@
 
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Hello World</title>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            font-family: Arial, sans-serif;
-        }
-
-        .card {
-            background: rgba(255,255,255,0.15);
-            padding: 40px;
-            border-radius: 15px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            color: white;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 40px;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="tasks.js" defer></script>
 </head>
-<body>
-    <div class="card">
-        <h1>Hello World!</h1>
+<body data-context-path="<%= request.getContextPath() %>">
+    <div class="backdrop-glow"></div>
+    <div class="app-card">
+        <h1>To Do List</h1>
+        <form id="task-form" class="task-form" autocomplete="off">
+            <input id="task-input" name="title" type="text" placeholder="Add a new task..." maxlength="120" required />
+            <button type="submit">Add</button>
+        </form>
+
+        <ul id="task-list" class="task-list" aria-live="polite"></ul>
     </div>
 </body>
 </html>
